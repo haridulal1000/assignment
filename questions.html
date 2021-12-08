@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		div{	position:fixed; left:1000px; border: 1px solid black;}
+		#submit{ height:30px; width:60px; cursor: pointer;}
+		input[type="radio"]{cursor: pointer;}
+		progress{position: fixed; top: 50px;left: 1000px;}
+	</style>
+</head>
+<body>
+<div id="timer"> Time left: </div>
+<h1>1. Who is the current president of USA?</h1>
+<input type="radio" name="ans1" class="answer" value="a1">Donald Trump<br> <input type="radio" name="ans1" class="answer" value="a2"> Hillary Klinton<br>
+<input type="radio" name="ans1" class="answer" value="a3">Barack Obama<br> <input type="radio" name="ans1" class="answer" value="a4"> George Bush<br><br><br>
+<h1>2. What is the first radio brodcast network?</h1>
+<input type="radio" name="ans2" class="answer" value="b1">CNN <br><input type="radio" name="ans2" class="answer" value="b2">Radio Nepal<br>
+<input type="radio" name="ans2" class="answer" value="b3"> BBC <br><input type="radio" name="ans2" class="answer" value="b4">kantipur FM<br><br><br>
+<h1>3. If y=x<sup>x</sup> then, find dy/dx:</h1>
+<input type="radio" name="ans3" class="answer" value="c1">x<sup>x</sup>(1+ln x)<br> <input type="radio" name="ans3" class="answer" value="c2">x<sup>x</sup><br>
+<input type="radio" name="ans3" class="answer" value="c3">x <br><input type="radio" name="ans3" class="answer" value="c4">x<sup>2</sup><br><br><br>
+<h1>4. If y=x<sup>x<sup>x<sup>....</sup></sup></sup> find dy/dx:</h1>
+<input type="radio" name="ans4" class="answer" value="d1">ln x<br><input type="radio" name="ans4" class="answer" value="d2">y/x((1/y)-ln x)<br>
+<input type="radio" name="ans4" class="answer" value="d3">y<sup>x</sup>ln x<br><input type="radio" name="ans1" class="answer" value="a1">x<sup>x</sup><br><br><br>
+<h1>5. Which is the tallest dam in the world?</h1>
+<input type="radio" name="ans5" class="answer" value="e1">Nurek Dam<br> <input type="radio" name="ans5" class="answer" value="e2">Jinping-I<br>
+<input type="radio" name="ans5" class="answer" value="e3">Enguri Dam <br><input type="radio" name="ans5" class="answer" value="e4">Xiaowan Dam<br><br>
+<input type="button" id="submit" value="Submit">
+<progress value="1" max="60" id="progres">
+</body>
+<script type="text/javascript">
+var ans=["a1","b3","c1","d2","e2"];
+var x=0;
+var timer=60;
+window.onload=timing;
+function timing(){
+	timer--;
+	document.getElementById("timer").innerHTML="Time left: "+timer;
+	pro.value=pro_status;
+	pro_status++;
+	if(timer==0){
+		check();
+	}
+}
+setInterval(timing,1000);
+	document.getElementById("submit").addEventListener("click",check);
+	var answers=document.getElementsByClassName("answer");
+	var pro=document.getElementById("progres");
+	var pro_status=1;
+function check(){
+ for(var i=0;i<answers.length;i++){
+ 	if(answers[i].checked){
+ 		for(var j=0;j<ans.length;j++){
+ 			if(ans[j]==answers[i].value){
+ 				x++;
+ 			}
+ 		}
+ 	}
+ }
+ alert("You have got "+x+" answers correct");
+ window.location=("questions.html");
+}
+</script>                             
+</html>

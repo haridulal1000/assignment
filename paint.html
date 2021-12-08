@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#canvas{border:1px solid;			}
+	</style>
+</head>
+<body>
+</body>
+<script type="text/javascript" src="p5.min.js"></script>
+<script type="text/javascript">
+	function setup(){
+		createCanvas(700,700);
+		frameRate(1);
+	}
+	function draw(){
+		//strokeWeight(2);
+		stroke(0);
+		for(var i=1;i<=8;i++){
+			for(var j=1;j<=8;j++){
+				if(frameCount%2==0){
+				if((i+j)%2==0){
+					fill(255);
+				}
+				else{
+					fill(0);
+				}
+		rect(i*70,j*70,70,70);
+	}
+	else{
+
+				if((i+j)%2!=0){
+					fill(255);
+				}
+				else{
+					fill(0);
+				}
+		rect(i*70,j*70,70,70);
+
+	
+	}
+		}
+
+	}
+}
+	//function mouseDragged(){
+	//	draw(mouseX,mouseY);
+	//}
+</script>
+	
+
+</script>
+</html>

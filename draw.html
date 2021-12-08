@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="p5.min.js"></script>
+	<script type="text/javascript">
+		var xpos=50;
+		var xspeed=5;
+		function setup(){
+			createCanvas(600,600);
+		}
+		function draw(){
+			background(255);
+			ellipse(xpos,100,50,50);
+			if(xpos==width){
+				xspeed=-5;
+			}
+			else if(xpos==0){
+				xspeed=5;
+			}
+
+			xpos+=xspeed;
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>

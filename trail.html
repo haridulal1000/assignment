@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="p5.min.js"></script>
+	<script type="text/javascript">
+			var part;
+		function setup(){
+			createCanvas(600,600);
+			part=new particle(20,20);
+			frameRate(5);
+		}
+		function draw(){
+			background(255);
+			part.update();
+			part.show();
+			
+		}
+		class particle{
+			constructor(x,y){
+			this.x=x;
+			this.y=y;
+			this.trail=[];
+			this.xVel=20;
+			this.yVel=0;
+
+		}
+			update(){
+				var pos=createVector(this.x,this.y);
+				this.trail.push(pos);
+				
+				if(this.trail.length>2){
+					this.trail.splice(0,1);
+				}
+				if(this.y<=20 && this.x>=560){
+					this.xVel=0;
+					this.yVel=20;
+				}
+				else if(this.y>=560 && this.x>=560){
+					this.xVel=-20;
+					this.yVel=0;
+				}
+				else if(this.x<=20 && this.y>=560){
+					this.xVel=0;
+					this.yVel=-20;
+				}
+				else if(this.x<=20 && this.y<=20){
+					this.xVel=20;
+					this.yVel=0;
+				}
+				this.x+=this.xVel;
+				this.y+=this.yVel;
+			}
+			 show(){
+			 	stroke(0);
+			 	fill(100);
+				rect(this.x,this.y,20,20);
+				for(var i=0;i<this.trail.length;i++){
+					//if(this.trail.length>3){
+						//this.trail.splice(0);
+					//}
+					fill(150);
+					stroke(0);
+					
+					rect(this.trail[i].x,this.trail[i].y,20,20);
+				}
+				
+			}
+		}
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

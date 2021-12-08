@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	The text request will be displayed below...<br>
+	<div id="text"></div>
+
+</body>
+<script type="text/javascript">
+	
+window.onload=go();
+function go(){
+var xmlhttp;
+	if(window.XMLHttpRequest){
+		xmlhttp=new XMLHttpRequest();
+	}
+	else{
+		xmlhttp=new ActiveXObject('Microsoft.XMLHTTP');
+	}
+	xmlhttp.open=('GET','hello.txt',true);
+	xmlhttp.send();
+	xmlhttp.onreadystatechange=function(){
+		if (xmlhttp.readyState==4 && xmlhttp.status==200){
+			document.getElementById('text').innerHTML=xmlhttp.responseText;
+		}
+	}
+}
+
+
+</script>
+</html>

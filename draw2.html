@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="p5.min.js"></script>
+	<script type="text/javascript">
+			var part;
+			var food1;
+		function setup(){
+			createCanvas(600,600);
+			part=new particle();
+			food1=new food();
+			frameRate(7);
+		}
+
+		function keyPressed(){
+			if(keyCode==37 && part.xvel==0){
+				part.xvel=-20;
+				part.yvel=0;
+			}
+			if(keyCode==38 && part.yvel==0){
+				part.xvel=0;
+				part.yvel=-20;
+			}
+			if(keyCode==39 && part.xvel==0){
+				part.xvel=20;
+				part.yvel=0;
+			}
+			if(keyCode==40 && part.yvel==0){
+				part.xvel=0;
+				part.yvel=20;
+			}
+		}
+
+
+	
+			
+		
+		function draw(){
+			background(0,200,0);
+			part.update();
+			part.show();
+			food1.show();
+			if(part.x==food1.x && part.y==food1.y){
+				food1.update();
+				part.score();
+			}
+			for(var i=0;i<part.trail.length;i++){
+					if(dist(part.x,part.y,part.trail[i].x,part.trail[i].y)<1 && part.trail.length>4){
+						document.getElementById("status").innerHTML="Game Over<br> Total Score: "+part.body;
+						noLoop();
+					}
+				}
+			
+			
+		}
+		function particle(){
+			this.x=20;
+			this.y=20;
+			this.trail=[];
+			this.xvel=20;
+			this.yvel=0;
+			this.body=1;
+			this.point1=0;
+			this.dir=function(xvel,yvel){
+	      
+				this.xvel=xvel;
+				this.yvel=yvel;
+			}
+			
+		
+			this.update=function(){
+				var pos=createVector(this.x,this.y);
+				this.trail.push(pos);
+				
+				
+				this.x+=this.xvel;
+				this.y+=this.yvel;
+
+			}
+			this.score=function(){
+				this.body++;
+				this.point1++;
+				document.getElementById("status").innerHTML="Total Score: "+this.point1;
+
+			}
+			
+			
+			 this.show=function(){
+			 if(this.trail.length>this.body){
+					this.trail.splice(0,1);
+				}
+				
+				if(this.y<0){
+					this.y=580;
+				}
+				else if(this.y>600){
+					this.y=0;
+				}
+				else if(this.x<0){
+					this.x=600;
+				}
+				else if(this.x>600){
+					this.x=0;
+				}
+				
+			 	stroke(0);
+			 	fill(100);
+				rect(this.x,this.y,20,20);
+				for(var i=0;i<this.trail.length;i++){
+					fill(150);
+					stroke(0);
+					
+					rect(this.trail[i].x,this.trail[i].y,20,20);
+				}
+				
+			}
+		}
+		function food(){
+			this.x=100;
+			this.y=100;
+			this.show=function(){
+				fill(175,0,0);
+				stroke(0);
+				rect(this.x,this.y,20,20);
+			}
+			this.update=function(){
+				this.x=(Math.floor(random(0,29)))*20;
+				this.y=(Math.floor(random(0,29)))*20;
+			}
+
+
+		}
+		
+
+	</script>
+</head>
+<body>
+	<div id="status" style="font-size: 20px">Total Score: 0</div>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	#clik{border-width: 5px; border-color: black;	background: grey; margin-right: 1300px;	}
+	#clik:on-click{	background: black; color:white; margin-right: 1300px;	}
+</style>
+<body>
+<div id="clik"><b> Click here</b></div><br>
+<p id="para"></p>
+</body>
+<script type="text/javascript">
+	var a=document.getElementById("clik");
+	var b=document.getElementById("para");
+	var x=0;
+	window.addEventListener("click",go);
+	function go(){
+		x=x+1;
+		b.innerHTML=x;
+	}
+</script>
+</html>

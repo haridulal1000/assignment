@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	
+ul li{
+	background: green;
+     border-style: solid; margin-right: 1400px; margin-left: -10px;
+	list-style-type: none;
+}
+#home{		border-bottom: none;}
+#about{		border-bottom: none;		}
+.hide{	 display: none;			}
+#button{ position: relative;		}
+#content{position: absolute; z-index: 1;		}
+</style>
+<body>
+
+
+&#160&#160&#160&#160&#160&#160<input type="button" id="button" value="click to toggle" align="center"><br>
+<ul id="content" class="show">
+	<li id="home">Home</li>
+	<li id="about">About</li>
+    <li>Links</li>
+
+</ul><br><br><br><br>
+<h1>Hey There</h1>
+
+
+
+</body>
+<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	
+$(document).ready
+(function(){
+$("h1").hide(2000).show(1000)
+}
+	);
+
+
+</script>
+<script type="text/javascript">
+	
+
+var button=document.getElementById("button");
+button.addEventListener("click",go);
+var ini=1;
+function go() {
+	if (ini==1) {
+		document.getElementById("content").className="hide";
+		ini=0;
+	}
+	else{
+		document.getElementById("content").className="show";
+		ini=1;
+	}
+}
+
+
+
+</script>
+</html>

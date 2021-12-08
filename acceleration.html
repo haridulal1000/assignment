@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="p5.min.js"></script>
+	<script type="text/javascript">
+		var mover;
+
+ function setup(){
+  createCanvas(600,600);
+  mover=new Mover();
+}
+ function draw(){
+  background(200);
+ 
+  mover.update();
+  mover.view();
+}
+function Mover(){
+   
+
+  
+  this.location=createVector(200,220);
+  this.speed= createVector(0,0);
+  this.acce=createVector(0,0);
+ // mouse=new PVector(mouseX,mouseY);
+  
+  this.update=function(){
+  this.mouse=createVector(mouseX,mouseY);
+ /* PVector trace[]=new PVector[5];
+  for(int i=0;i<trace.length;i++){
+    trace[i].x=mouseX;
+    trace[i].y=mouseY;
+    rect(trace[i].x,trace[i].y,10,10);
+  }*/
+  this.mouse.sub(this.location);
+  this.mouse.setMag(0.5);
+  this.acce.add(this.mouse);
+  this.acce.limit(2);
+    this.speed.add(this.acce);
+    this.location.add(this.speed);
+    this.speed.limit(5);
+    
+  }
+  this.view=function(){
+    fill(255,0,0);
+    ellipse(location.x,location.y,20,20);
+  }
+}
+	</script>
+</head>
+<body>
+
+</body>
+</html>

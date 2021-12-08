@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css" >
+	body{ background: grey;		}	
+	.nav{	display: none;	}	
+	p{	display: inline-block;		z-index: 1;	}
+	.say{   position: relative; background: yellow;		display: inline-block;	z-index: 2; margin-top: 10px; margin-bottom: 1000px;padding-bottom: 50px;}
+	#anchor{margin-right: 10px;		}
+
+	</style>
+</head><p id="para" class="para">
+
+
+
+
+
+<pre>
+
+           <br>
+My name is <a href="#" id="anchor">Khan<a href="#" id="nav" class="nav">Khan</a></a> and I am not a terrorist. Since I'm not a terrorist I don't need to face the peril.</pre>
+<body>
+
+</body>
+<script type="text/javascript">
+	var anchor=document.getElementById("anchor");
+	anchor.addEventListener("mouseenter",go);
+	anchor.addEventListener("mouseleave",no);
+	function go(){
+		var x=document.getElementById("nav");
+		x.className="say";
+	}
+	function no(){
+		var y=document.getElementById("nav");
+		y.className="nav";   
+
+	}
+</script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<br><b>RED</b>
+	<br><input type="range" min="0" max="255" value="20" id="red"><input type="text" id="redT"><br><br>
+	<br><b>GREEN</b><br><input type="range" min="0" max="255" value="20" id="green"><input type="text" id="greenT"><br>
+	<br><b>BLUE</b><br><input type="range" min="0" max="255" value="20" id="blue"><input type="text" id="blueT"><br><br>
+	<input type="button" id="button" value="click">
+
+</body>
+<script type="text/javascript" src="p5.min.js"></script>
+<script type="text/javascript">
+	function setup(){
+		createCanvas(300,300);
+		
+	}
+	function draw(){
+		background(red1.value,green1.value,blue1.value);
+	}
+	var red1=document.getElementById('red');
+	var green1=document.getElementById('green');
+	var blue1=document.getElementById('blue');
+	document.getElementById('button').addEventListener('click',function(){
+		alert(document.getElementById('red').value+" "+document.getElementById('green').value+' '+document.getElementById('blue').value);
+	});
+	document.getElementById('redT').contentEditable='false';
+	document.getElementById('redT').contentEditable='false';
+	document.getElementById('redT').contentEditable='false';
+
+	function setValue(){
+	document.getElementById('redT').value=red1.value;
+	document.getElementById('greenT').value=green1.value;
+	document.getElementById('blueT').value=blue1.value;
+}
+setValue();
+setInterval(setValue,100);
+
+	
+</script>
+</html>

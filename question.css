@@ -1,0 +1,9 @@
+body{	background: #999;						}
+h3{		color: #160;		}
+a{		text-decoration: none;	background: red; font-size: 50px;	border-style: solid; border-width: 5px;
+border-radius: 20px;
+	}
+	a:hover{	background: black; color:white;			}
+	#Electro{		background: red; 	margin-right: 1100px;			}
+	#Electro:hover{	background: black; color: red; cursor: not-allowed;				}
+	#quiz{	font-size: 40px; align-self: center;	}

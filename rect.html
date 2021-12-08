@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<canvas height="500" width="500" id="canvas"></canvas>
+</body>
+<script type="text/javascript">
+	window.onload=go();
+	function go(){
+		var canvas=document.getElementById("canvas");
+		var ctx=canvas.getContext("2d");
+		ctx.arc(300,300,50,0,7,false);
+		ctx.stroke();
+		ctx.arcTo(100,50,150,200,110);
+		ctx.stroke();
+	}
+
+
+
+</script>
+</html>

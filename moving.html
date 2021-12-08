@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	#canvas{ border:solid 1px; }
+	</style>
+</head>
+<body>
+<canvas height="500" width="500" id="canvas"></canvas>
+
+</body>
+<script>
+var canvas=document.getElementById("canvas");
+var ypos=10;
+var xpos=10;
+var ctx=canvas.getContext("2d");
+var ctx2=canvas.getContext("2d");
+var xvel=3,yvel=0;
+
+window.addEventListener("load",animate());
+function animate(){
+function go(){
+	document.onkeydown=move;
+	function move(e){
+			if(e.keyCode==38){
+			yvel-=3;
+			xvel=0;
+		}
+		else if(e.keyCode==39){
+			xvel+=3;
+			yvel=0;
+		}
+		else if(e.keyCode==40){
+			yvel+=3;
+			xvel=0;
+		}
+		else if(e.keyCode==37){
+			xvel-=3;
+			yvel=0;
+		}
+		else if(e.keyCode==46){
+			xvel=0;
+			yvel=0;
+		}
+
+
+		
+	}
+	if(xpos>500){
+		xpos=0;
+	}
+	if(xpos<0){
+		xpos=500;
+	}
+	if(ypos>500){
+		ypos=0;
+	}
+	if(ypos<0){
+		ypos=500;
+	}
+	ctx.save();
+	ctx.clearRect(0,0,canvas.height,canvas.width);
+	ctx.fillStyle="green";
+	ctx.fillRect(xpos,ypos,20,20);
+	
+	
+	ctx.restore();
+	xpos+=xvel;
+	ypos+=yvel;
+}
+var intervals=setInterval(go,30);
+}
+
+
+</script>
+</html>

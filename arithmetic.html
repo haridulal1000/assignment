@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title></title>
+</head>
+<body>
+
+<input type="text" name="firstnum" id="num1"/><b><font size="5">+</font></b>
+<input type="text" name="secondname" id="num2"/>
+<input type="button" name="botton" size="20" id="adding"/>
+<p id="para">Your answer will appear here</p>
+
+
+</body>
+<script type="text/javascript">
+	var m=document.getElementById("adding");
+	var a=document.getElementById("num1");
+	var b=document.getElementById("num2");
+	
+	m.addEventListener("mouseenter",fo);
+	function fo(){
+		var num1=parseInt(a.value)||0;
+	var num2=parseInt(b.value)||0;
+		var result=num1+num2;
+		document.getElementById("para").innerHTML = result;
+	}
+	m.addEventListener("mouseleave",go);
+	function go(){
+		document.getElementById("para").innerHTML="Your answer will appear here";
+	}
+	
+</script>
+
+</html>

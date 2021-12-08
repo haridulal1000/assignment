@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<h2>Enter the user-name</h2>
+<input type="text" id="user" placeholder="User-name">
+<h2>Enter the password</h2>
+<input type="text" id="pass" placeholder="Password">
+<br> <input type="button" value="Go" id="button">
+<h2>Sign up here</h2>
+</body>
+<script type="text/javascript">
+var user=["hari","sujit","roshan"];
+var pass=["dulal","sharma","bhattarai"];
+document.getElementById("button").addEventListener("click",go);
+function go(){
+for(var i=0;i<user.length;i++){
+if(document.getElementById("user").value==user[i]){
+var match=i;
+if(document.getElementById("pass").value==pass[match]){
+alert("match");
+break;
+}
+else{
+alert("NO");
+break;
+}
+}
+else{
+alert("No match");
+break;
+}
+}
+}
+
+</script>
+</html>

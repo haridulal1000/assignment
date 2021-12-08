@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	ul li{	display: inline-block; background: blue;margin:5px; font-size: 30px;				}
+ul li:hover{			background: black;color: white; cursor: pointer;}
+.hide{	display:none;		}
+.show{display: block;		}
+#paris1{			z-index: 10;}
+#tokyo1{	z-index: 5;}
+</style>
+<body bgcolor="#999">
+<h1>An introduction to tabs formation</h1>
+
+<ul>
+	<li id="home" class="home">Home</li>
+	<li id="paris1" class="paris1" onclick="go(2)">Paris</li>
+	<li id="tokyo1" class="tokyo1" onclick="go(1)">Tokyo</li>
+	<li id="london1" class="london1" onclick="go(3)">London</li>
+</ul>
+<hr>
+<p id="tokyo" class="hide">
+Tokyo is the capital city of Japan.</p>
+<p id="paris" class="hide">
+Paris is the capital city of France.</p>
+<p id="london" class="hide">
+London is the capital city of England</p>
+
+
+
+</body>
+
+<script type="text/javascript">
+function ho(){
+
+
+
+}
+	
+
+function go(arg){
+	var x=document.getElementById("tokyo");
+	var y=document.getElementById("paris");
+	var z=document.getElementById("london");
+	if(arg==1){
+		x.className="show";
+   y.className="hide";
+   z.className="hide";
+	}
+	if(arg==2){
+   y.className="show";
+   x.className="hide";
+   z.className="hide";
+	}
+	if(arg==3){
+		z.className="show";
+   x.className="hide";
+   y.className="hide";
+	}
+
+}
+
+
+
+</script>
+
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+</style>
+	<title></title>
+</head>
+<body>
+
+<canvas height="400" width="400" id="canvas"></canvas>
+
+</body>
+<script type="text/javascript">
+	
+window.onload=draw();
+function draw() {
+	var canvas=document.getElementById("canvas");
+	var con=canvas.getContext("2d");
+	con.lineWidth=10;
+	con.lineCap="butt";
+	con.lineJoin="bevel";
+	
+
+	con.beginPath();
+	con.moveTo(100,100);
+	con.lineTo(200,200);
+	con.lineTo(150,100);
+	con.closePath();
+	con.stroke();
+ alert(con.isPointInPath(100,150));
+}
+
+
+</script>
+</html>

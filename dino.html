@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	
+	<script type="text/javascript" src="p5.min.js"></script>
+	<script type="text/javascript" src="Dino.js"></script>
+	<script type="text/javascript" src="Pole.js"></script>
+	<script type="text/javascript">
+		var dino;
+		var pole;
+		var x=0;
+		global var y=0;
+		var ident;
+		function randGen(){
+			 x=Math.round(Math.random(30,50));
+			 global var y;
+			 y+=x;
+			return y;
+		}
+		
+
+		function setup(){
+			createCanvas(600,600);
+			dino=new Dino(20,550,0);
+			pole=[];
+			pole.push(new Pole(600));
+			ident=15;
+		}
+		window.onkeydown=function(e){
+			dino.jump();
+		}
+		function draw(){
+			background(155);
+			for(var i=1;i<110;i++){
+				point(i*5,580);
+			}
+			dino.draw();
+			dino.update();
+			for(var i=0;i<pole.length;i++){
+			pole[i].draw();
+			pole[i].update();
+			if(dino.contact(pole[i])==true)
+				noLoop();
+			if(pole[i].xpos<0)
+				pole.splice(0,1);
+			}
+			if(frameCount==ident){
+				ident=randGen();
+			}
+			if(frameCount==ident){
+				pole.push(new Pole(600));
+
+			}
+
+			console.log(ident);
+
+		}
+		
+		
+	</script>
+</head>
+<body>
+
+</body>
+</html>

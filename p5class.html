@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="p5.min.js"></script>
+	<script type="text/javascript">
+		let b1;
+		function mousePressed(){
+			
+			b1=new Bubble(mouseX,mouseY,50);
+			b1.display();
+		}
+		function setup(){
+			createCanvas(600,600);
+			background(200);
+		}
+		function draw(){
+				//b1=new Bubble(x,y,d);
+				//b1.display();
+
+		}
+		class Bubble{
+			constructor(xpos,ypos,d){
+				this.xpos=xpos;
+				this.ypos=ypos;
+				this.d=d;
+			}
+			display(){
+				fill(100);
+				ellipse(this.xpos,this.ypos,this.d);
+			}
+		}
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		
+.img{	border-style: solid;border-color: black;    border-width: 5px;			}
+.img:hover{	border-color: blue; cursor: pointer;					}
+button{	cursor: pointer;		}
+
+	</style>
+</head>
+<body><pre>
+
+										                       <img src="ab de villiers pic02.jpg" height="80" width="120" id="img1" class="img" onclick="go(0)">
+										                       <img src="AB_de_Villiers_Popular_South_African_Batsman_Cricketer_Wallpapers.jpg" height="80" width="120" id="img2" class="img" onclick="go(1)">
+										                       <img src="AB-De-Villiers-13.jpg" height="80" width="120" id="img3" class="img" onclick="go(2)">
+										                       
+	<img src="ab de villiers pic02.jpg" height="300" width="450" id="photo"><br>									                       
+	<button id="left" onclick="left()">Left</button>	           		<button id="right" onclick="Right()">Right</button>
+
+
+</pre>
+
+</body>
+<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	
+var image=["ab de villiers pic02.jpg","AB_de_Villiers_Popular_South_African_Batsman_Cricketer_Wallpapers.jpg","AB-De-Villiers-13.jpg"]
+var x=0;
+var y=2000;
+var flag=0;
+function Pause(){
+	if(flag==0){
+		y=10000000;
+		flag=1;
+	}
+else{
+	y=1000;
+	flag=0;
+}
+}
+
+
+function go(arg){
+	$("#photo").attr("src",image[arg])
+}
+function left() {
+	
+	x--;
+	if(x==-1){
+		x=2;
+	}
+	$("#photo").attr("src",image[x])
+}
+function Right(){
+
+	x++;
+	if(x==3){
+		x=0;
+	}
+	$("#photo").attr("src",image[x])
+
+
+}
+
+
+
+</script>
+</html>

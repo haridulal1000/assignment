@@ -1,0 +1,58 @@
+﻿<DOCTYPE! html>
+<html>
+<head>
+Colors
+<style type="text/css">
+#red{	background:red; cursor:pointer;}
+#green{	background:green; cursor:pointer;}
+#blue{	background:blue; cursor:pointer;}
+</style>
+<body>
+<input type="button" id="red">&#160<input type="button" id="green">&#160<input type="button" id="blue"><br>
+<p id="para">Hello friends. My name is Sungaa.
+I'm the greatest bokaa the world has ever witnessed.
+My sole dream has been to be the greatest pervert in the world.
+</p>
+<div id="timer">0:0</div>
+</body>
+<script type="text/javascript">
+var x=0;
+var y=0;
+window.onload=time;
+function time(){
+x++;
+if(x>=60){
+x=0;
+y++;
+}
+document.getElementById("timer").innerHTML=y+":"+x;
+
+}
+setInterval(time,1000);
+window.onload=red;
+function red(){
+document.getElementById("para").style.background="red";
+document.getElementById("para").style.color="white";
+document.getElementById("red").style.background="red";
+document.getElementById("blue").style.background="white";
+document.getElementById("green").style.background="white";
+setTimeout(blue,1000);
+}
+function blue(){
+document.getElementById("para").style.background="blue";
+document.getElementById("para").style.color="white";
+document.getElementById("red").style.background="white";
+document.getElementById("blue").style.background="blue";
+document.getElementById("green").style.background="white";
+setTimeout(green,1000);
+}
+function green(){
+document.getElementById("para").style.background="green";
+document.getElementById("para").style.color="white";
+document.getElementById("red").style.background="white";
+document.getElementById("blue").style.background="white";
+document.getElementById("green").style.background="green";
+setTimeout(red,1000);
+}
+</script>
+</html> 

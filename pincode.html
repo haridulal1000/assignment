@@ -1,0 +1,28 @@
+﻿<DOCTYPE! html>
+<html>
+<head>
+<style type="text/css">
+</style>
+<body>
+<h1> Enter the pincode</h1>
+<input type="text" id="input" placeholder="PINCODE">
+<input type="button" id="button" value="click">
+</body>
+<script type="text/javascript">
+var x=0;
+window.onload=check;
+function check(){
+if (x==0){
+if (document.getElementById("input").value=="3261"){
+document.getElementById("input").value=" ";
+window.location="form.html";
+}
+}
+}
+document.getElementById("button").addEventListener("click",go);
+function go(){
+window.open("form.html");
+}
+setInterval(check,500);
+</script>
+</html>

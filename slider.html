@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	     <title>slider design in html and css</title>
+   </head>
+      <style type="text/css">
+      	   body{ background:grey; color: black;	}
+           #form{	background:yellow;  position: absolute;	left: 10px;}
+           #check{	display: none;		}
+           #para{	border-width: 1px; border-style: solid;	border-right: -500px ; margin-right: 500px;		z-index: 2;}
+           #check:checked ~ #div{	left: -500px; position: absolute;	transition: all  .3s ease-in-out;	}
+           #div{	position: absolute; left: 0px;		transition: all .3s ease-in-out;	}
+           #ul{	background: green;}
+           #ul li{ margin-top: 20px;margin-bottom: 40px;margin-left: 0px;margin-right: 0px; list-style-type: none; border-top: 1px;border-left: 0px;border-right: 0px; border-style: solid; }
+           .pop{ 	position: absolute; display: none;	}
+           .pop1{	position: absolute;background: blue;	margin-left: 500px;	}
+           #html:hover ~ #pop{	background:blue; display: block;		z-index: 20;}
+      </style>
+<body>
+ <h1> This page shows the display of sliders in HTML pages using CSS stylesheet.</h1>
+     <input type="checkbox" id="check">
+     <label for="check">&#9776</label>
+     <div id="div">
+       <ul id="ul">
+            <li>HOME</li>
+            <li>ABOUT</li>
+            <li>CONTACT</li>
+            <li>LINKS</li>
+       	
+
+
+
+
+       </ul>
+
+
+      </div>
+     <p id="para">       <br>  &#160    &#160&#160&#160&#160&#160&#160&#160&#160&#160               <div divclass="pop" id="pop">HTML</div>
+In this page, we have tried to demonstrate you the sliders that can be created using <a href="#" id="html" class="html">HTML</a> and CSS in web page designing.<br>
+For that purpose what we need to do is just put the menu to be slided in position absolute before using our on click event handling.<br>
+The we need to shift the whole menu to either extreme right or extreme left so that it can not be seen on the web page for the while being.
+     </p>
+
+
+  </body>
+
+  <script type="text/javascript">
+  	
+               var pop=document.getElementById("pop");
+               var div=document.getElementById("html");
+
+               html.addEventListener("mouseenter",go);
+               function go(){
+               	pop.className="pop1";
+               }
+               html.addEventListener("mouseleave",lo);
+               function lo(){
+               	pop.className="pop";
+               }
+
+
+
+
+
+
+
+  </script>
+</html>

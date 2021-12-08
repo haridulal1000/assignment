@@ -1,0 +1,163 @@
+<DOCTYPE! html>
+<html>
+<head>
+<style type="text/css">
+#division{	position:absolute; left:50px; margin-right:1000px; border:5px solid black; padding: 10px; border-radius: 5px;}
+input[type="button"]{	height: 30px; width: 40px; box-shadow: 5px 5px grey;}
+input[type="text"]{		height:30px; box-shadow: 3px 3px grey;}
+input[type="button"]:hover{		border: 2px blue solid; cursor: pointer;	}
+#eql{	width: 120;	}
+</style>
+</head>
+<body>
+<div id="division">
+<input type="text" width=50 id="input1"><br>
+<input type="button" id="1" value="1" class="in" >    <input type="button" id="2" value="2" class="in"> <input type="button" id="3" value="3" class="in"><br>
+<input type="button" id="4" value="4" class="in" >    <input type="button" id="5" value="5" class="in"> <input type="button" id="6" value="6" class="in"><br>
+<input type="button" id="7" value="7" class="in" >    <input type="button" id="8" value="8" class="in"> <input type="button" id="9" value="9" class="in"><br>
+<input type="button" id="0" value="0" class="in" >    <input type="button" id="+" value="+"> <input type="button" id="-" value="- "><br>
+<input type="button" id="*" value="* " >    <input type="button" id="/" value="/ "> <input type="button" id="^" value="x^y "><br>
+<input type="button" id="eql" value="="><br>
+<B>History</B><br>
+<input type="text" id="alt"><br>
+<input type="button" value="reset" id="reset">
+</div>
+</body>
+<script type="text/javascript">
+document.getElementById("+").addEventListener("click",add);
+document.getElementById("-").addEventListener("click",sub);
+document.getElementById("*").addEventListener("click",multi);
+document.getElementById("/").addEventListener("click",div);
+document.getElementById("eql").addEventListener("click",equal);
+document.getElementById("2").addEventListener("click",two);
+function one(){
+	document.getElementById("alt").value=document.getElementById("alt").value+"1";
+	document.getElementById("input1").value=document.getElementById("input1").value+"1";
+}
+
+document.getElementById("2").addEventListener("click",two);
+function two(){
+	document.getElementById("alt").value=document.getElementById("alt").value+"2";
+	document.getElementById("input1").value=document.getElementById("input1").value+"2";
+}
+document.getElementById("3").addEventListener("click",three);
+function three(){
+	document.getElementById("alt").value=document.getElementById("alt").value+"3";
+	document.getElementById("input1").value=document.getElementById("input1").value+"3";
+}
+document.getElementById("4").addEventListener("click",four);
+function four(){
+	document.getElementById("alt").value=document.getElementById("alt").value+"4";
+	document.getElementById("input1").value=document.getElementById("input1").value+"4";
+}
+document.getElementById("5").addEventListener("click",five);
+function five(){
+	document.getElementById("alt").value=document.getElementById("alt").value+"5";
+	document.getElementById("input1").value=document.getElementById("input1").value+"5";
+}
+document.getElementById("6").addEventListener("click",six);
+function six(){
+	document.getElementById("alt").value=document.getElementById("alt").value+"6";
+	document.getElementById("input1").value=document.getElementById("input1").value+"6";
+}
+document.getElementById("7").addEventListener("click",seven);
+function seven(){
+	document.getElementById("alt").value=document.getElementById("alt").value+"7";
+	document.getElementById("input1").value=document.getElementById("input1").value+"7";
+}
+document.getElementById("8").addEventListener("click",eight);
+function eight(){
+	document.getElementById("alt").value=document.getElementById("alt").value+"8";
+	document.getElementById("input1").value=document.getElementById("input1").value+"8";
+}
+document.getElementById("9").addEventListener("click",nine);
+function nine(){
+	document.getElementById("alt").value=document.getElementById("alt").value+"9";
+	document.getElementById("input1").value=document.getElementById("input1").value+"9";
+}
+document.getElementById("0").addEventListener("click",zero);
+function zero(){
+	document.getElementById("alt").value=document.getElementById("alt").value+"0";
+	document.getElementById("input1").value=document.getElementById("input1").value+"0";
+}
+document.getElementById("1").addEventListener("click",one);
+function one(){
+	document.getElementById("alt").value=document.getElementById("alt").value+"1";
+	document.getElementById("input1").value=document.getElementById("input1").value+"1";
+}
+var sign;
+var input1;
+var input2=0;
+var input3=1;
+var ans;
+function add(){
+sign="+";
+input1= input2+parseFloat(document.getElementById("input1").value);
+input2=input1;
+document.getElementById("input1").value=" ";
+document.getElementById("alt").value=document.getElementById("alt").value+"+";
+
+}
+function sub(){
+sign="-";
+input1=parseFloat(document.getElementById("input1").value)-input2;
+input2=input1;
+document.getElementById("input1").value=" ";
+document.getElementById("alt").value=document.getElementById("alt").value+"-";
+}
+function multi(){
+sign="*";
+input1=parseFloat(document.getElementById("input1").value)*input3;
+input3=input1;
+document.getElementById("input1").value=" ";
+document.getElementById("alt").value=document.getElementById("alt").value+"*";
+}
+function div(){
+sign="/";
+input1=parseFloat(document.getElementById("input1").value)/input3;
+input3=input1
+document.getElementById("input1").value=" ";
+document.getElementById("alt").value=document.getElementById("alt").value+"/";
+}
+function equal(){
+	if(sign=="+"){
+ ans=input1+parseFloat(document.getElementById("input1").value);
+ document.getElementById("input1").value=ans;
+ document.getElementById("alt").value=document.getElementById("alt").value+"="+ans;
+
+	}
+	if(sign=="-"){
+ ans=input1-parseFloat(document.getElementById("input1").value);
+ document.getElementById("input1").value=ans;
+	}
+	if(sign=="*"){
+ ans=input1*parseFloat(document.getElementById("input1").value);
+ document.getElementById("input1").value=ans
+ document.getElementById("alt").value=document.getElementById("alt").value+"="+ans;
+	}
+	if(sign=="/"){
+ ans=input1/parseFloat(document.getElementById("input1").value);
+ document.getElementById("input1").value=ans;
+ document.getElementById("alt").value=document.getElementById("alt").value+"="+ans;
+	}
+	if(sign=="^"){
+	ans=input1^(parseFloat(document.getElementById("input1").value));
+	document.getElementById("input1").value=ans;
+	document.getElementById("alt").value=document.getElementById("alt").value+"="+ans;
+	}
+input2=0;
+input3=1;
+}
+document.getElementById("reset").addEventListener("click",reset);
+function reset(){
+	document.getElementById("input1").value="";
+	document.getElementById("alt").value="";
+}
+document.getElementById("^").addEventListener("click",power);
+function power(){
+document.getElementById("input1").value=" ";
+document.getElementById("alt").value=document.getElementById("alt").value+"^";
+sign="^";
+}
+</script>
+</html>

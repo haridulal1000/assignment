@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="p5.min.js"></script>
+	<script type="text/javascript">
+		let bird,pole;
+		var x=0;
+function setup(){
+	createCanvas(600,600);
+	bird=new Ball();
+	pole=[];
+	pole.push(new Poles());
+	frameRate(50);
+
+}
+window.onkeydown=function(e){
+	if(e.keyCode==32){
+		bird.jump(32);
+	}
+	if(e.keyCode==38){
+		bird.jump(38)
+	}
+}
+function draw(){
+	background(150);
+	bird.update();
+	bird.show();
+	if(frameCount%150==0){
+		pole.push(new Poles());
+	}
+	for(var i=0;i<pole.length;i++){
+		if(pole[i].x<0){
+			pole.splice(0,1);
+			
+		}
+if(pole[i].contact(bird)==true){
+				//alert("hit");
+				noLoop();
+				x=1;
+			}
+
+	pole[i].update();
+	pole[i].show();
+
+}
+if(bird.y>580 || bird.y<20){
+	noLoop();
+	x=1;
+	//alert("Game over");
+}
+	
+}
+function Ball(){
+	this.gravity=0.5;
+	this.velocity=0;
+	this.x=300;
+	this.y=100;
+	this.update=function(){
+		this.velocity+=this.gravity;
+		this.y+=this.velocity;
+	}
+	this.show=function(){
+		ellipse(this.x,this.y,40,40);
+	}
+	this.jump=function(e){
+		if(e==32)
+		this.velocity=-5;
+	if(e==38)
+		this.velocity-=10;
+	}
+}
+function Poles(){
+	this.tall=random(0,500);
+	this.deep=600-this.tall-150;
+	this.x=500;
+	this.diff=this.tall+this.deep;
+	this.update=function(){
+		this.x-=2;
+	}
+	this.show=function(){
+		
+		rect(this.x,height-this.tall,20,this.tall);
+		rect(this.x,0,20,this.deep);
+	
+	}
+	this.contact=function(bird){
+		
+		if((bird.y+20)>(600-this.tall) || (bird.y-20)<(this.deep)){
+			
+				if((bird.x+20)>=this.x && (bird.x-20)<=(this.x+20)){
+					return true;
+			
+			
+		}
+	}
+		return false;
+	}
+}
+var score=0;
+var x=0;
+function scoreUpdate(){
+	if(x==0){
+	document.getElementById("score").innerHTML="Your Score: "+score;
+	score++;
+	
+}
+
+}
+var m=setInterval(scoreUpdate,1000);
+if(x==1){
+	clearInterval(m);
+
+	
+}
+
+
+
+
+
+
+	</script>
+</head>
+<body>
+<div id="score">Your Score: 0</div>
+</body>
+</html>

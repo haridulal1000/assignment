@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	h1{     cursor: pointer; }
+ul li{
+	background: green;
+     border-style: solid; margin-right: 1400px; margin-left: -10px;
+	list-style-type: none; cursor: pointer;
+}
+#home{		border-bottom: none;}
+#about{		border-bottom: none;		}
+.hide{	 display: none;			}
+#button{ position: relative;		}
+#content{position: absolute; z-index: 1;		}
+</style>
+<body>
+<h1>click me</h1>
+
+
+&#160&#160&#160&#160&#160&#160<input type="button" id="button" value="click to toggle" align="center"><br>
+<ul id="content" class="show">
+	<li id="home">Home</li>
+	<li id="about">About</li>
+    <li id="links">Links</li>
+
+</ul><br><br><br><br>
+<h1>Hey There</h1>
+<img src="ab de villiers pic02.jpg" height="100" width="150" id="photo">
+
+
+
+</body>
+<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+
+<script type="text/javascript">
+	
+
+var button=document.getElementById("button");
+button.addEventListener("click",go);
+var ini=1;
+function go(){
+ if (ini==1){
+  $(document).ready
+		(function(){
+			$("#home").css("background","blue")
+			$("#about").hide(1000);
+			$("#links").hide(1000);
+			$("#photo").attr("src","AB_de_Villiers_Popular_South_African_Batsman_Cricketer_Wallpapers.jpg")
+
+		});
+		ini=0;
+ }
+ else{
+ 	$(document).ready
+ 	(function(){
+ 		$("#home").css("background","green")
+ 		$("#about").show(200)
+			$("#links").show(200)
+			$("#photo").attr("src","ab de villiers pic02.jpg")
+ 	});
+ 	ini=1;
+ }
+}
+
+ $(document).ready
+ (function(){
+
+ 	$("h1").click(function(){
+ 		alert("hello");
+ 	});
+ });
+
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,17 @@
+﻿<DOCTYPE! html>
+<html>
+<head>
+</head>
+<body>
+<p id="time">0</p>
+</body>
+<script type="text/css">
+window.onload=timer;
+var x=0;
+function timer(){
+x++;
+document.getElementById("time").innerHTML=" "+x;
+}
+setInterval(timer,1000);
+</script>
+</html>

@@ -1,0 +1,30 @@
+﻿<DOCTYPE html>
+<html>
+<head>
+<title>Webpage</title>
+<style type="text/css">
+</style>
+</head>
+<body>
+<h2> The webpage here can count the number of clicks you have clicked on the webpage.</h2>
+<p id="para">No of clicks= 0</p>
+<p id="cord"></p>
+</body>
+<script type="text/javascript">
+var x=0;
+var y=0;
+window.addEventListener("click",count);
+function count(){
+x++;
+document.getElementById("para").innerHTML="No of clicks= "+x;
+
+}
+window.addEventListener("mousemove",go);
+function go(){
+var xc=window.clientX;
+var yc=window.clientY;
+document.getElementById("cord").innerHTML=" "+xc+" "+yc;
+
+}
+</script>
+</html>

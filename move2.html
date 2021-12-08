@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	#canvas{	border: 1px solid;		}
+	</style>
+</head>
+<body>
+<canvas height="500" width="500" id="canvas"></canvas>
+
+</body>
+<script type="text/javascript">
+	var canvas=document.getElementById("canvas");
+	var ctx=canvas.getContext("2d");
+	var xpos=10,ypos=10;
+	ctx.fillStyle="green";
+	ctx.fillRect(xpos,ypos,10,10);
+	window.onkeydown=move;
+	function move(e){
+      if(e.keyCode==38){
+      	ypos-=10;
+      }
+      if(e.keyCode==39){
+      	xpos+=10;
+      }
+      if(e.keyCode==40){
+      	ypos+=10;
+      }
+      if(e.keyCode==37){
+      	xpos-=10;
+      }
+      if(xpos<0){
+      	xpos=500;
+      }
+      if(xpos>500){
+      	xpos=0;
+      }
+      if(ypos<0){
+      	ypos=500;
+      }
+      if(ypos>500){
+      	ypos=0;
+      }
+      ctx.save();
+      ctx.clearRect(0,0,500,500);
+      ctx.rectStyle="green";
+      ctx.fillRect(xpos,ypos,10,10);
+      ctx.stroke();
+
+
+
+	}
+
+
+
+</script>
+</html>

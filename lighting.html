@@ -1,0 +1,32 @@
+﻿<DOCTYPE! html>
+<html>
+<head>
+</head>
+<body>
+<input type="button" class="button"><input type="button" class="button"><input type="button" class="button"><input type="button" class="button"><input type="button" class="button">
+<input type="button" class="button"><input type="button" class="button"><input type="button" class="button"><input type="button" class="button"><input type="button" class="button"><input type="button" class="button">
+</body>
+<script type='text/javascript'>
+window.onload=color;
+var n=0;
+var i=0;
+var x=document.getElementsByClassName("button");
+function color(){
+x[i].style.background="red";
+for( var j=0;j<x.length;j++){
+if(j!=i){
+x[j].style.background="white";
+}
+}
+i++;
+if(i>=x.length){
+i=0;
+}
+
+
+
+}
+setInterval(color,500);
+
+</script>
+</html>

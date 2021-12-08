@@ -1,0 +1,27 @@
+﻿<DOCTYPE! html>
+<html>
+<head>
+<style type="text/css">
+img{ position: relative; left:200px;}
+div{display:inline-block; border:1px solid black; cursor:pointer;}
+div:hover{background:black; color:white;}
+#left{position:relative; left:150px;}
+#right{position:relative; left:350px;}
+</style>
+</head>
+<body>
+<img src="D:\web\4f26be45764ab32f6bb9c452f0970075--zayn-malik-tattoos-life-goals.jpg" height=200 width=300 id="img"><br>
+<div id="left">Left</div>              <div id="right">Right</div>
+
+</body>
+<script type="text/javascript">
+var x=["D:\web\4f26be45764ab32f6bb9c452f0970075--zayn-malik-tattoos-life-goals.jpg","D:/web/photo.jpg"];
+var y=0;
+document.getElementById("right").addEventListener("click",go());
+function go(){
+y++;
+document.getElementById("img").src=x[1];
+
+}
+</script>
+</html>

@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<input type="button" value="x" class="button" id="button" onclick="go(1)"> <input type="button" value="x" class="button" id="button" onclick="go(2)"> <input type="button" value="x" class="button" id="button" onclick="go(3)"> <input type="button" value="x" class="button" id="button" onclick="go(4)"> <input type="button" value="x" class="button" id="button" onclick="go(5)">
+<input type="button" id="input" value="name" onclick="go(1)">
+</body>
+<script type="text/javascript">
+var x=document.getElementById("input");
+function go(e){
+	if(e==1){
+		document.getElementsByClassName("button")[0].value="M";
+	}
+	if(e==2){
+		document.getElementsByClassName("button")[1].value="A";
+	}
+	if(e==3){
+		document.getElementsByClassName("button")[2].value="N";
+	}
+	if(e==4){
+		document.getElementsByClassName("button")[3].value="G";
+	}
+	if(e==5){
+		document.getElementsByClassName("button")[4].value="O";
+	}
+}
+</script>
+</html>

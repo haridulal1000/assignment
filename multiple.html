@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1>1. What is the capital city of USA?</h1>
+<input type="radio" name="ans1" id="ans1" value="a" class="answer">Boston       <input type="radio" name="ans1" id="ans2" value="b" class="answer">New York<br>
+<input type="radio" name="ans1" id="ans3" value="c" class="answer"> Washington DC <input type="radio" name="ans1" value="d" id="ans4" class="answer"> Los Angeles<br>
+<h1>2. If y=x<sup>x</sup>, then the value of dy/dx is:</h1>
+<input type="button" value="submit" id="submit">
+
+</body>
+<script type="text/javascript">
+	var x=document.getElementsByClassName("answer");
+	document.getElementById("submit").addEventListener("click",checker);
+	function checker(){
+	for (var i=0;i<x.length;i++) {
+		if(x[i].checked){
+			if(x[i].value=="c"){
+				alert("correct");
+			}
+			else{
+				alert("wrong");
+			}
+		}
+	}
+}
+</script>
+</html>
